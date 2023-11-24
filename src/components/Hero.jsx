@@ -54,48 +54,6 @@ const Hero = () => {
       { name: "Jun", uv: 2300, pv: 3800, amt: 2500 },
       { name: "Jul", uv: 3490, pv: 4300, amt: 2100 },
     ],
-    // {
-    //   name: 'Page A',
-    //   uv: 4000,
-    //   pv: 2400,
-    //   amt: 2400,
-    // },
-    // {
-    //   name: 'Page B',
-    //   uv: 3000;
-    //   pv: 1398;
-    //   amt: 2210;
-    // },
-    // {
-    //   name: 'Page C',
-    //   uv: 2000,
-    //   pv: 9800,
-    //   amt: 2290,
-    // },
-    // {
-    //   name: 'Page D',
-    //   uv: 2780,
-    //   pv: 3908,
-    //   amt: 2000,
-    // },
-    // {
-    //   name: 'Page E',
-    //   uv: 1890,
-    //   pv: 4800,
-    //   amt: 2181,
-    // },
-    // {
-    //   name: 'Page F',
-    //   uv: 2390,
-    //   pv: 3800,
-    //   amt: 2500,
-    // },
-    // {
-    //   name: 'Page G',
-    //   uv: 3490,
-    //   pv: 4300,
-    //   amt: 2100,
-    // },
   };
 
   const handlePeriodChange = (period) => {
@@ -126,43 +84,6 @@ const Hero = () => {
           ))}
         </div>
         <div className="bg-white w-3 h-3 flex justify-center items-center shadow-box border-rounded-2">
-          {/* <LineChart
-            width={250}
-            height={150}
-            data={dataByPeriod[selectedPeriod]}
-          >
-            
-            <Tooltip />
-            <Legend />
-           
-            <Line
-              className="graphshadow"
-              type="monotone"
-              dataKey="pv"
-              style={{
-                stroke: "url(#gradient)",
-                strokeWidth: 3,
-                filter: "url(#orangeShadow)",
-              }}
-            />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop
-                  offset="0%"
-                  style={{ stopColor: "#FFAD5E", stopOpacity: 1 }}
-                />
-                <stop
-                  offset="100%"
-                  style={{ stopColor: "#FFCB4A", stopOpacity: 1 }}
-                />
-              </linearGradient>
-              <filter id="orangeShadow" x="0" y="0" width="150%" height="150%">
-                <feOffset result="offOut" in="SourceAlpha" dx="0" dy="6" />
-                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3" />
-                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-              </filter>
-            </defs>
-          </LineChart> */}
           <AreaChart className="flex justify-center items-center"
           width={250}
             height={140}
@@ -232,9 +153,7 @@ const Hero = () => {
             bottom: 2,
           }}
         >
-          {/* <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis /> */}
+          
           <Tooltip />
           <Label value="name" offset={0} position="insideTop" />
           <Label value="day" offset={0} position="insideBottom" />
@@ -245,7 +164,7 @@ const Hero = () => {
 
       {/* large device */}
       <div className="flex flex-between mb-3 sm-none">
-        <div className="bg-white flex flex-col flex-box box items-center justify-center border-rounded h-2 w-2 m-3 shadow-box ">
+        <div className="bg-white flex flex-col flex-box box items-center justify-center border-rounded h-10 w-2 m-3 shadow-box ">
           <div className="flex justify-center items-center bg-blue-gradient border-rounded-3 h-4 w-4 mt-1">
             <i
               className="fas fa-dollar-sign"
@@ -255,7 +174,7 @@ const Hero = () => {
           <p className="text-xl opacity-50 text-bold body">Buy BTC</p>
         </div>
 
-        <div className="bg-white flex flex-col box items-center justify-center border-rounded h-2 w-2 m-3 shadow-box ">
+        <div className="bg-white flex flex-col box items-center justify-center border-rounded h-10 w-2 m-3 shadow-box ">
           <div className="flex justify-center items-center bg-orange-gradient border-rounded-3 h-4 w-4 mt-1">
             <i
               className="fas fa-dollar-sign"

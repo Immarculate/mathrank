@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { CgArrowLongUpL } from "react-icons/cg";
@@ -5,8 +6,7 @@ import { CgCalendarTwo } from "react-icons/cg";
 import { CgRemove } from "react-icons/cg";
 import { CgToolbarRight } from "react-icons/cg";
 
-const Nav = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+const Nav = ({ toggleNav, isNavOpen }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 425);
 
   useEffect(() => {
@@ -21,25 +21,23 @@ const Nav = () => {
     };
   }, []);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
+  
 
   const navLinks = [
-    { className: "", title: "Edit", icon: <CgToolbarRight /> },
-    { className: "", title: "Courier info", icon: <CgCalendarTwo /> },
-    { className: "", title: "Share info", icon: <CgArrowLongUpL />  },
-    { className: "text-red", title: "Remove", icon: <CgRemove value={{ color: "red" }}/> },
+    { className: "text-xl-1 body", title: "Edit", icon: <CgToolbarRight /> },
+    { className: "text-xl-1", title: "Courier info", icon: <CgCalendarTwo /> },
+    { className: "text-xl-1", title: "Share info", icon: <CgArrowLongUpL />  },
+    { className: "text-xl-1 text-red", title: "Remove", icon: <CgRemove value={{ color: "red" }}/> },
   ];
 
   return (
-    <div className={`h-1 w-full nav-bar ${isSmallScreen ? 'sm-content' : 'lg-content'}`}>
-    {isNavOpen && (
+    <div className={`h-1 w-full nav-bar ${toggleNav ? 'bg-white' : 'bg-gray'} ${isSmallScreen ? 'sm-content' : 'lg-content'}`}>
+    {/* {isNavOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-50"
           onClick={toggleNav}
         />
-      )}
+      )} */}
     {/* div a */}
        <div className="flex h-1 w-full bg-white items-center justify-between nav-bar lg-content">
        <div className="">

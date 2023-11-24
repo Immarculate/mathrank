@@ -1,30 +1,27 @@
 // import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Bottombar from "./components/Bottombar";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import SideBar from "./components/SideBar";
 
 function App() {
-  const [, setIsSmallScreen] = useState(window.innerWidth <= 425);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return (
-    <div className="bg-gray flex-col">
-      <Nav />
   
-      <div className="flex">
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+  
+
+  
+  return (
+    <div className={` flex-col h-full `}>
+      <Nav toggleNav={toggleNav} isNavOpen={isNavOpen} />
+  
+      <div onClick={ isNavOpen && toggleNav } className={` flex ${isNavOpen ? 'body-color' : 'bg-gray' }`}>
         <div className="lg-bg-content"><SideBar /></div>
         <div  className="smt-content f-1"><Hero /></div> 
       </div>
