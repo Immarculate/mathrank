@@ -32,7 +32,6 @@ const Nav = () => {
 
   return (
     <div className={`h-1 w-full nav-bar ${isSmallScreen ? 'sm-content' : 'lg-content'}`}>
-      {/* Common content for both div a and div b */}
     {/* div a */}
        <div className="flex h-1 w-full bg-white items-center justify-between nav-bar lg-content">
        <div className="">

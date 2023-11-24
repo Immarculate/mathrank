@@ -154,9 +154,8 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
   }
 
   .shadow-box {
-    background-color: #fff; /* Set the background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Set the box shadow */
-    /* margin: 20px; */
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
   }
 
   .bottom-bar {
@@ -164,11 +163,9 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     position: fixed;
     bottom: 0;
     left: 0;
-    /* height: 50px; */
     background-color: #f5eded;
     display: flex;
     justify-content: space-around;
-    /* padding: 10px; */
     color: white;
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
   }
@@ -184,7 +181,6 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* padding: 10px; */
     color: rgb(14, 13, 13);
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
   }
@@ -206,7 +202,7 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     transition: all 0.3s ease;
   }
   .box:hover {
-    width: 180px; /* Set the width you want on hover */
+    width: 180px; 
     height: 180px; 
   }
 
@@ -227,18 +223,16 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
   }
 
   .flex-box {
-    transition: all 0.3s ease; /* Add a smooth transition effect */
+    transition: all 0.3s ease; 
   }
   
   .flex-box:hover {
-    width: 150px; /* Set the width you want on hover */
-    height: 150px; /* Set the height you want on hover */
+    width: 150px; 
+    height: 150px; 
   }
 
   .expandable-container {
-    transition: max-height 1.5s ease-in-out; /* Adjust the duration and easing as needed */
-    /* overflow: hidden; */
-    /* max-height: 1000px; */
+    transition: max-height 1.5s ease-in-out;
   }
 
   .sidebar {
@@ -270,7 +264,7 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
 
   @font-face {
     font-family: 'SFProDisplay';
-    src: url('./fonts/SF-Pro-Display.woff2') format('woff2'); /* Adjust the path based on your file structure */
+    src: url('./fonts/SF-Pro-Display.woff2') format('woff2'); 
     font-weight: normal;
     font-style: normal;
   }
@@ -290,7 +284,6 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     }
   }}
 
-  /* Default styles for small devices */
 .sm-content {
   width: 100%;
 }
@@ -302,7 +295,6 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
   
 }
 
-/* Styles for large devices (screens wider than 768px) */
 @media screen and (min-width: 425px) {
   .lg-content {
     width: 100%;
