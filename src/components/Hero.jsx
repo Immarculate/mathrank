@@ -6,6 +6,7 @@ import {
   Line,
   // eslint-disable-next-line no-unused-vars
   XAxis,
+  // eslint-disable-next-line no-unused-vars
   YAxis,
   CartesianGrid,
   Tooltip,
@@ -139,7 +140,7 @@ const Hero = () => {
      
      {/* large device */}
       <div className="flex flex-between mb-3 sm-none">
-        <div className="bg-white flex flex-col box items-center justify-center border-rounded h-2 w-2 m-3 shadow-box ">
+        <div className="bg-white flex flex-col flex-box box items-center justify-center border-rounded h-2 w-2 m-3 shadow-box ">
           <div className="flex justify-center items-center bg-blue-gradient border-rounded-3 h-4 w-4 mt-1">
             <i
               className="fas fa-dollar-sign"

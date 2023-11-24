@@ -143,10 +143,10 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
 .navbar-menu {
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
     position: absolute;
-    top: 19px;
-    right: 5px;
+    top: 45px;
+    right: 0px;
     background-color: #fffafa;
     min-width: 100px;
     border-radius: 5px;
@@ -203,9 +203,11 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     cursor: pointer;
     color: #fff;
     background-color: gray;
+    transition: all 0.3s ease;
   }
   .box:hover {
-    transform: translate(16px);
+    width: 180px; /* Set the width you want on hover */
+    height: 180px; 
   }
 
   .nav-bar {
@@ -224,6 +226,14 @@ background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,45,196,1) 100%)
     border-radius: 20px;
   }
 
+  .flex-box {
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  .flex-box:hover {
+    width: 150px; /* Set the width you want on hover */
+    height: 150px; /* Set the height you want on hover */
+  }
 
   .expandable-container {
     transition: max-height 1.5s ease-in-out; /* Adjust the duration and easing as needed */

@@ -50,8 +50,8 @@ const Nav = () => {
       <div className="flex mr-5">
         <ul className="flex list-none text-bold items-center opacity-75 body">
           <div className="m-3">Edit <i className="fas fa-edit"></i></div>
-          <div className="m-3">hello <i className="fas fa-truck"></i></div>
-          <div className="m-3">hello <i className="fas fa-share-alt"></i></div>
+          <div className="m-3">Courier info <i className="fas fa-truck"></i></div>
+          <div className="m-3">Share info <i className="fas fa-share-alt"></i></div>
           <div className="m-3">Remove <i className="fas fa-trash"></i></div>
         </ul>
       </div>
@@ -80,12 +80,13 @@ const Nav = () => {
           style={{ color: "gray", fontSize: "25px", opacity: "0.5" }}
           onClick={toggleNav}
         />
-        <div className="navbar-menu bg-white items-last sidebar">
+        <div className="">
           {isNavOpen && (
-            <ul className="navbar-menu  flex justify-center mr-1">
+           <div className="navbar-menu mr-1 mt-1">
+           <ul className="bg-white flex-col justify-center mr-1">
               {navLinks.map((link) => (
                 <li className="list-none mt-1" key={link}>
-                  <div className="flex  justify-between">
+                  <div className="flex  justify-between items-center mr-2">
                     {" "}
                     {link.title}
                     {link.icon}
@@ -94,6 +95,7 @@ const Nav = () => {
                 </li>
               ))}
             </ul>
+           </div>
           )}
         </div>
       </div>
