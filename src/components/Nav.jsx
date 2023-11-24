@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { CgArrowLongUpL } from "react-icons/cg";
+import { CgCalendarTwo } from "react-icons/cg";
+import { CgRemove } from "react-icons/cg";
+import { CgToolbarRight } from "react-icons/cg";
 
 const Nav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -24,14 +26,20 @@ const Nav = () => {
   };
 
   const navLinks = [
-    { title: "Edit", icon: <i className="fas fa-edit"></i> },
-    { title: "Courier info", icon: <i className="fas fa-truck"></i> },
-    { title: "Share info", icon: <i className="fas fa-share-alt"></i> },
-    { title: "Remove", icon: <i className="fas fa-trash"></i> },
+    { className: "", title: "Edit", icon: <CgToolbarRight /> },
+    { className: "", title: "Courier info", icon: <CgCalendarTwo /> },
+    { className: "", title: "Share info", icon: <CgArrowLongUpL />  },
+    { className: "text-red", title: "Remove", icon: <CgRemove value={{ color: "red" }}/> },
   ];
 
   return (
     <div className={`h-1 w-full nav-bar ${isSmallScreen ? 'sm-content' : 'lg-content'}`}>
+    {isNavOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-50"
+          onClick={toggleNav}
+        />
+      )}
     {/* div a */}
        <div className="flex h-1 w-full bg-white items-center justify-between nav-bar lg-content">
        <div className="">
@@ -41,17 +49,17 @@ const Nav = () => {
         ></i>
       </div>
       <div>
-        <span className="font-serif body text-xl-2 font-bold opacity-75 mr-5">
+        <span className="font-serif body text-xl-2 text-bold opacity-75 mr-5">
           Bitcoin Wallet
         </span>
       </div>
 
       <div className="flex mr-5">
         <ul className="flex list-none text-bold items-center opacity-75 body">
-          <div className="m-3">Edit <i className="fas fa-edit"></i></div>
-          <div className="m-3">Courier info <i className="fas fa-truck"></i></div>
-          <div className="m-3">Share info <i className="fas fa-share-alt"></i></div>
-          <div className="m-3">Remove <i className="fas fa-trash"></i></div>
+          <div className="m-3 body flex justify-center ietms-center">Edit <CgToolbarRight /> </div>
+          <div className="m-3 body flex justify-center ietms-center">Courier info <CgCalendarTwo /></div>
+          <div className="m-3 body flex justify-center ietms-center">Share info <CgArrowLongUpL /></div>
+          <div className="m-3 body text-red flex justify-center ietms-center">Remove <CgRemove className='' value={{ color: "red" }}/></div>
         </ul>
       </div>
 
@@ -74,33 +82,31 @@ const Nav = () => {
       </div>
 
       <div>
-        <FontAwesomeIcon
-          icon={faBars}
-          style={{ color: "gray", fontSize: "25px", opacity: "0.5" }}
-          onClick={toggleNav}
-        />
-        <div className="">
-          {isNavOpen && (
-           <div className="navbar-menu mr-1 mt-1">
-           <ul className="bg-white flex-col justify-center mr-1">
-              {navLinks.map((link) => (
-                <li className="list-none mt-1" key={link}>
-                  <div className="flex  justify-between items-center mr-2">
-                    {" "}
-                    {link.title}
-                    {link.icon}
-                  </div>
-                  <hr />
-                </li>
-              ))}
-            </ul>
-           </div>
-          )}
-        </div>
+      <i className="fa fa-ellipsis-v" style={{ color: "gray", fontSize: "25px", opacity: "0.5" }}
+          onClick={toggleNav}></i>
+        
+          
+        
       </div>
        </div>
  
        </div>
+       {isNavOpen && (
+           
+           <ul className="navbar-menu mt-1 mr-1 p-1">
+              {navLinks.map((link) => (
+                <li className={`${link.className} flex-col body justify-between list-none mt-1 `} key={link}>
+                   <div className='flex items-center justify-between'>
+                   {link.title}
+                   <div>{link.icon} </div>
+                    
+                   </div>
+                  <hr />
+                </li>
+              ))}
+            </ul>
+           
+          )}
     </div>
   );
 };
